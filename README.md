@@ -121,7 +121,7 @@ The application is deployed using Docker on Render.
 
 Live application:
 
-https://devops-pipeline-ffl0.onrender.com
+https://devops-pipeline-fft0.onrender.com
 
 ## Repository
 
