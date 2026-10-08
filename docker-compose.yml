@@ -6,6 +6,11 @@ services:
       - "5000"
     environment:
       APP_MESSAGE: "DevOps Pipeline Application is Running!"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   nginx:
     image: nginx:alpine
