@@ -21,3 +21,12 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - app
+
+  monitor:
+    image: python:3.13-slim
+    container_name: devops-pipeline-monitor
+    volumes:
+      - ./monitor.py:/monitor.py:ro
+    command: ["python", "/monitor.py"]
+    depends_on:
+      - app
